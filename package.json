@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+    "engines": {
+        "node": "15.x"
+    },
     "scripts": {
         "start": "node backend/server.js",
         "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
