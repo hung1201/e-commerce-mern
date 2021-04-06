@@ -20,6 +20,7 @@
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-fileupload": "^1.2.1",
+        "heroku": "^7.51.0",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.12.2",
         "nodemailer": "^6.5.0",
