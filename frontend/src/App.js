@@ -52,7 +52,7 @@ function App() {
       setStripeApiKey(data.stripeApiKey)
     }
     getStripeApiKey()
-  },[])
+  },[stripeApiKey])
   return (
     <Router>
       <div>
