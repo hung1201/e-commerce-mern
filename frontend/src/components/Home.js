@@ -51,16 +51,22 @@ const Home = ({match}) => {
             {loading ? <Loader/> : (
 <>
 <MetaData title={`HUNGNH`}/>
-<div className="container container-fluid">
-          <h1 id="products_heading">Newest Products</h1>
-        </div>
-        
-        <SliderCom/>
+{
+    !keyword ? (
+        <>
+        <div className="container container-fluid">
+        <h1 id="products_heading">Newest Products</h1>
+      </div>
+      <SliderCom/>
+      </>
+    ) : <></>
+}
+
 <h1 id="products_heading">Latest Products</h1>
 <section id="products" className="container mt-5">
 <div className="row">
 
-        { keyword || clickData ? (
+        { keyword ? (
             <>
                 <div className="col-6 col-md-3 mt-5 mb-5">
                     <div className="px-5">

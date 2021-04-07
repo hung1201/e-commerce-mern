@@ -112,9 +112,9 @@ function App() {
         <ProtectedRoute exact path='/admin/reviews' isAdmin={true} component={ProductReviews}/>
         
         {
-          !loading && (!isAuthenticated|| user.role!== 'admin') && (
+          !loading && ( !isAuthenticated || user.role!== 'admin') && (
             <Footer/>
-  )
+          )
         }
         
       </div>
