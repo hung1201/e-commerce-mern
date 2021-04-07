@@ -7,6 +7,7 @@ import Loader from './layout/Loader'
 import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
 import Slider, { createSliderWithTooltip } from 'rc-slider'
+import SliderCom from './layout/SliderCom';
 import 'rc-slider/assets/index.css'
 // =========================================================
 const Range = createSliderWithTooltip(Slider.Range)
@@ -50,6 +51,11 @@ const Home = ({match}) => {
             {loading ? <Loader/> : (
 <>
 <MetaData title={`HUNGNH`}/>
+<div className="container container-fluid">
+          <h1 id="products_heading">Newest Products</h1>
+        </div>
+        
+        <SliderCom/>
 <h1 id="products_heading">Latest Products</h1>
 <section id="products" className="container mt-5">
 <div className="row">

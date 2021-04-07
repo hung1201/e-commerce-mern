@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import { useSelector } from 'react-redux'
+import {Link} from 'react-router-dom'
+const SliderCom = () => {
 
-const Slider = () => {
     const {products} = useSelector(state => state.products)
     return (
 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{backgroundColor:'#e9e9e9'}}>
@@ -16,11 +17,13 @@ const Slider = () => {
       {
           products.slice(-3).map((product,key) => (
               <Fragment>
-                      <div className={`carousel-item ${key == 0 ? 'active': ''}`} style={{width:'100%',height:'400px'}}>
+                      <Link className={`carousel-item ${key == 0 ? 'active': ''}`} style={{width:'100%',height:'400px'}}
+                       to = {`/products/${product._id}`}
+                      >
                         <img className="d-flex w-80 h-100" src={product.images[0].url} alt="First slide"
                         style={{margin:'auto'}}
                         />
-                        </div>
+                        </Link>
               </Fragment>
           ))
       }
@@ -37,4 +40,4 @@ const Slider = () => {
     )
 }
 
-export default Slider
+export default SliderCom

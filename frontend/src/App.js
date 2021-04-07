@@ -41,7 +41,6 @@ import ProcessOrder from './components/admin/ProcessOrder';
 import UsersList from './components/admin/UsersList';
 import UserDetails from './components/admin/UserDetails';
 import ProductReviews from './components/admin/ProductReviews';
-import Slider from './components/layout/Slider';
 // ==================================================================
 function App() {
   const [stripeApiKey,setStripeApiKey] = useState('')
@@ -58,11 +57,6 @@ function App() {
     <Router>
       <div>
         <Header/>
-        <div className="container container-fluid">
-          <h1 id="products_heading">Newest Products</h1>
-        </div>
-        
-        <Slider/>
         <div className="container container-fluid">
 
         {/* ============================================================== */}
