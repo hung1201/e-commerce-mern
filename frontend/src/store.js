@@ -5,6 +5,7 @@ import { adminProductReducer, getReviewsReducer, newProductReducer, newReviewRed
 import { adminUserReducer, allUsersReducer, forgotPasswordReducer, userDetailReducers, userProfileReducer, userReducer } from './reducer/userReducers'
 import { cartReducers } from './reducer/cartReducers'
 import { adminOrdersReducers, myOrdersReducer, newOrderReducer, orderDetailsReducer, updateOrderReducer } from './reducer/orderReducers'
+import { onClickReducer } from './reducer/onClickReducer'
 const reducer = combineReducers({
     products:productReducers,
     productDetails : productDetailReducers,
@@ -24,6 +25,7 @@ const reducer = combineReducers({
     adminUsers: adminUserReducer,
     userDetails: userDetailReducers,
     getReviews : getReviewsReducer,
+    onClick: onClickReducer,
 })
 
 let initialState = {

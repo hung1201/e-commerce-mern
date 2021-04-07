@@ -5,6 +5,8 @@ import {Route} from 'react-router-dom'
 import { useDispatch,useSelector} from 'react-redux'
 import {useAlert} from 'react-alert'
 import {logout} from '../../action/userActions'
+import { navClick } from '../../action/clickAction'
+import { getProducts } from '../../action/productActions'
 // ===================================================================
 const Header = () => {
     const alert = useAlert()
@@ -15,6 +17,15 @@ const Header = () => {
         dispatch(logout())
         alert.success('Logged out successfully')
     }
+    const categories = [
+        'Car',
+        'Motor',
+        'Laptop',
+        'Phone',
+        'Skincare',
+        'Clothes',
+        'Shoes',
+    ]
     return (
 <Fragment>
 <nav className="navbar row">
@@ -65,6 +76,27 @@ const Header = () => {
         }
 </div>
 </nav>
+{/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav d-flex w-100 justify-content-center align-items-center">
+    {
+            categories.map(category => (
+                <Link className="nav-item nav-link mr-2" key={category}
+                    style={{cursor:'pointer', color:'#fa0f0f'}}
+                    onClick={()=>navHandler(category)}
+                    to={`/`}
+                    >
+                    {category}
+                </Link>
+            ))
+        }
+
+    </div>
+  </div>
+</nav> */}
 </Fragment>
     )
 }

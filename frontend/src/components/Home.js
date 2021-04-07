@@ -13,6 +13,7 @@ const Range = createSliderWithTooltip(Slider.Range)
 
 const Home = ({match}) => {
     const [currentPage,setCurrentPage] = useState(1)
+    const {isClick,clickData,isLogoClick} = useSelector(state => state.onClick)
     const [price,setPrice] = useState([1,10000])
     const [category,setCategory] = useState('')
     const [rating,setRating] = useState(0)
@@ -28,17 +29,14 @@ const Home = ({match}) => {
     const alert = useAlert()
     const dispatch = useDispatch()
     const {loading,products,error,productCount,resPerPage,filteredProductsCount} = useSelector(state => state.products)
-    const keyword = match.params.keyword
-    
+    let keyword = match.params.keyword
     useEffect(()=>{
         if(error){
             return alert.error(error)
         }
-        dispatch(getProducts(keyword,currentPage,price,category,rating))
+            dispatch(getProducts(keyword,currentPage,price,category,rating))
     },
-    [dispatch,alert,error,keyword,currentPage,price,category,rating])
-
-
+    [dispatch,alert,error,keyword,currentPage,price,category,rating,isClick,isLogoClick])
 
     const setCurrentPageNo = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -56,7 +54,7 @@ const Home = ({match}) => {
 <section id="products" className="container mt-5">
 <div className="row">
 
-        {keyword ? (
+        { keyword || clickData ? (
             <>
                 <div className="col-6 col-md-3 mt-5 mb-5">
                     <div className="px-5">
