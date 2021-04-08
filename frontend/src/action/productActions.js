@@ -24,6 +24,25 @@ export const getProducts = (keyword='',currentPage = 1,price,category,rating = 0
         })
     }
 }
+export const getProductsSlider = () => async (dispatch) => {
+    try {
+        dispatch({
+            type:'PRODUCTS_SLIDER_REQUEST'
+        })
+        const { data } = await axios.get('/api/v1/productsSlider')
+        
+        dispatch({
+            type:'PRODUCTS_SLIDER_SUCCESS',
+            payload:data.products
+        })
+        
+    } catch (error) {
+        dispatch({
+            type:'PRODUCTS_SLIDER_FAIL',
+            payload:error.response.data.message
+        })
+    }
+}
 export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({

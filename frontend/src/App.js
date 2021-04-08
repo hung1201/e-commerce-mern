@@ -61,7 +61,6 @@ function App() {
         <div className="container container-fluid">
         {/* ============================================================== */}
         
-        <Route exact path="/" component={SliderCom}/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/search/:keyword" component={Home}/>
 

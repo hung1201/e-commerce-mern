@@ -38,11 +38,13 @@ export const productReducers = (state = {products:[]},action) => {
     switch(action.type){
         case ALL_PRODUCTS_REQUEST:
         case ADMIN_PRODUCTS_REQUEST:
+        case 'PRODUCTS_SLIDER_REQUEST':
             return {
                 loading:true,
                 products:[]
             }
         case ADMIN_PRODUCTS_SUCCESS:
+        case 'PRODUCTS_SLIDER_SUCCESS':
             return {
                 loading:false,
                 products: action.payload
@@ -57,6 +59,7 @@ export const productReducers = (state = {products:[]},action) => {
             }
         case ADMIN_PRODUCTS_FAIL:
         case ALL_PRODUCTS_FAIL:
+        case 'PRODUCTS_SLIDER_FAIL':
             return {
                 loading:false,
                 error:action.payload
@@ -70,7 +73,32 @@ export const productReducers = (state = {products:[]},action) => {
             return state
     }
 }
-
+export const productSliderReducers = (state = {products:[]},action) => {
+    switch(action.type){
+        case 'PRODUCTS_SLIDER_REQUEST':
+            return {
+                loading:true,
+                products:[]
+            }
+        case 'PRODUCTS_SLIDER_SUCCESS':
+            return {
+                loading:false,
+                products: action.payload
+            }
+        case 'PRODUCTS_SLIDER_FAIL':
+            return {
+                loading:false,
+                error:action.payload
+            }
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error : null
+            }
+        default:
+            return state
+    }
+}
 export const productDetailReducers = (state = {product:{}},action)=>{
     switch(action.type){
         case PRODUCT_DETAILS_REQUEST:
