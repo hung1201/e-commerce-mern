@@ -41,6 +41,7 @@ import ProcessOrder from './components/admin/ProcessOrder';
 import UsersList from './components/admin/UsersList';
 import UserDetails from './components/admin/UserDetails';
 import ProductReviews from './components/admin/ProductReviews';
+import SliderCom from './components/layout/SliderCom';
 // ==================================================================
 function App() {
   const [stripeApiKey,setStripeApiKey] = useState('')
@@ -58,9 +59,9 @@ function App() {
       <div>
         <Header/>
         <div className="container container-fluid">
-
         {/* ============================================================== */}
         
+        <Route exact path="/" component={SliderCom}/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/search/:keyword" component={Home}/>
 
