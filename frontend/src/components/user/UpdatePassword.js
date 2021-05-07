@@ -32,8 +32,9 @@ const UpdatePassword = ({history}) => {
         formData.set('oldPassword',oldPassword)
         formData.set('password',password)
 
-
         dispatch(updatePassword(formData))
+        console.log(formData)
+        console.log(Object.fromEntries(formData))
     }
     return (
         <Fragment>

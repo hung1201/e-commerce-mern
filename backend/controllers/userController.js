@@ -140,7 +140,6 @@ exports.getUserProfile = catchAsyncError(async (req,res,next)=> {
 // Update / Change password => /api/v1/password/update
 exports.updatePassword = catchAsyncError(async (req,res,next)=> {
     const user = await User.findById(req.user.id).select('+password')
-    
     // Check previous user password
     const isMatched = await user.comparePassword(req.body.oldPassword)
     if(!isMatched){

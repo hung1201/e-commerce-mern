@@ -52,6 +52,7 @@ exports.getProducts = catchAsyncError (async (req,res,next) => {
         filteredProductsCount,
         products
     })
+    
 })
 
 // Get all products for slide => /api/v1/productsSlider
