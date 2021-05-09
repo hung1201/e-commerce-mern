@@ -32,8 +32,7 @@ body {
     border-radius: 5px;
 }
 
-.navbar.row {
-    width: 100%;
+.navbar {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -687,5 +686,18 @@ ul.CTAs a {
 @media (max-width:768px) {
     .responsive {
         display: none;
+    }
+}
+
+#login_btn i {
+    display: none;
+}
+
+@media (max-width:560px) {
+    #login_btn span {
+        display: none;
+    }
+    #login_btn i {
+        display: block;
     }
 }

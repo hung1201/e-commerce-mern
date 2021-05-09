@@ -90,8 +90,9 @@ const Home = ({ match }) => {
           <ul
             style={{
               display: "flex",
+              flexWrap: "wrap",
               width: "100%",
-              justifyContent: "space-evenly",
+              justifyContent: "space-between",
               alignItems: "center",
             }}>
             {categories.map((cat) => (
@@ -105,6 +106,8 @@ const Home = ({ match }) => {
                   fontSize: "36px",
                   color: "black",
                   cursor: "pointer",
+                  maxWidth: "120px",
+                  width: "120px",
                 }}>
                 {cat}
               </li>

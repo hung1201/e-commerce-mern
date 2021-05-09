@@ -27,7 +27,7 @@ const Header = () => {
   };
   return (
     <Fragment>
-      <nav className={`navbar row`}>
+      <nav className="navbar d-flex align-items-center">
         <div className="col-md-3 responsive">
           <div className="navbar-brand">
             <Logo to="/" onClick={logoClick}>
@@ -35,10 +35,10 @@ const Header = () => {
             </Logo>
           </div>
         </div>
-        <div className="col-8 col-md-6 col-sm-8 col-xs-8 ">
+        <div className="col-7 col-md-6 col-sm-7 col-xs-7 ">
           <Route render={({ history }) => <Search history={history} />} />
         </div>
-        <div className="col-4 col-md-3 col-sm-4 col-xs-4  text-center d-flex align-items-center">
+        <div className="col-5 col-md-3 col-sm-5 col-xs-5  text-center d-flex align-items-center justify-content-sm-start justify-content-start">
           <Link to="/cart" style={{ textDecoration: "none" }}>
             <span id="cart" className="ml-1">
               Cart
@@ -48,7 +48,7 @@ const Header = () => {
             </span>
           </Link>
           {user ? (
-            <div className=" dropdown d-inline">
+            <div className="dropdown d-inline">
               <Link
                 to="/"
                 className="btn dropdown-toggle text-white"
@@ -90,8 +90,9 @@ const Header = () => {
             </div>
           ) : (
             !loading && (
-              <Link to="/login" className="btn ml-4" id="login_btn">
-                Login
+              <Link to="/login" className="btn ml-2" id="login_btn">
+                <span>LOGIN</span>
+                <i className=" fa fa-sign-in "></i>
               </Link>
             )
           )}
